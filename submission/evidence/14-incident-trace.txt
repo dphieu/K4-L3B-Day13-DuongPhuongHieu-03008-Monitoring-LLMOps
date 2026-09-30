@@ -1,0 +1,59 @@
+# CP3 incident investigation
+
+- Challenge ID: `day13-k4-l3b-monitoring-llmops-v1`
+- Incident: `rag_slow`
+- Investigation window (UTC): `2026-09-30T09:36:25+00:00` to `2026-09-30T09:36:50+00:00`
+- Symptom threshold: `latency_ms > 2000`
+
+## Metrics and logs
+
+| Timestamp (UTC) | Correlation ID | API latency (ms) | Retrieval success |
+|---|---|---:|---|
+| 2026-09-30T09:36:30.137710Z | `req-b0584f48` | 2652 | True |
+| 2026-09-30T09:36:32.793803Z | `req-41d90c73` | 2653 | True |
+| 2026-09-30T09:36:35.450473Z | `req-064ab248` | 2652 | True |
+| 2026-09-30T09:36:38.104860Z | `req-d693fe48` | 2652 | True |
+| 2026-09-30T09:36:40.767058Z | `req-11038dd4` | 2653 | True |
+
+## Matching Langfuse observations
+
+### `req-064ab248`
+
+| Trace ID | Observation | Type | Latency (s) | Parent observation |
+|---|---|---|---:|---|
+| `138627d2a4407651e7a41d67c3e375f8` | retrieval | RETRIEVER | 2.504 | `bbfcdad6efd08ef9` |
+| `138627d2a4407651e7a41d67c3e375f8` | lab-agent-run | AGENT | 2.655 | `-` |
+| `138627d2a4407651e7a41d67c3e375f8` | generation | GENERATION | 0.151 | `bbfcdad6efd08ef9` |
+
+### `req-d693fe48`
+
+| Trace ID | Observation | Type | Latency (s) | Parent observation |
+|---|---|---|---:|---|
+| `a140043c742c240d867e1d9715f22039` | lab-agent-run | AGENT | 2.654 | `-` |
+| `a140043c742c240d867e1d9715f22039` | retrieval | RETRIEVER | 2.503 | `cbc8f7bcd9a736a0` |
+| `a140043c742c240d867e1d9715f22039` | generation | GENERATION | 0.151 | `cbc8f7bcd9a736a0` |
+
+### `req-b0584f48`
+
+| Trace ID | Observation | Type | Latency (s) | Parent observation |
+|---|---|---|---:|---|
+| `6b2e338f5027030127f571dfbfc75d26` | retrieval | RETRIEVER | 2.502 | `28d11f5ea7351d64` |
+| `6b2e338f5027030127f571dfbfc75d26` | lab-agent-run | AGENT | 2.653 | `-` |
+| `6b2e338f5027030127f571dfbfc75d26` | generation | GENERATION | 0.151 | `28d11f5ea7351d64` |
+
+### `req-11038dd4`
+
+| Trace ID | Observation | Type | Latency (s) | Parent observation |
+|---|---|---|---:|---|
+| `57edf5945f83dd5066984f37a578a562` | lab-agent-run | AGENT | 2.657 | `-` |
+| `57edf5945f83dd5066984f37a578a562` | retrieval | RETRIEVER | 2.505 | `ba6318941f6b2b5d` |
+| `57edf5945f83dd5066984f37a578a562` | generation | GENERATION | 0.152 | `ba6318941f6b2b5d` |
+
+### `req-41d90c73`
+
+| Trace ID | Observation | Type | Latency (s) | Parent observation |
+|---|---|---|---:|---|
+| `486313fed663c485c16580da677863a8` | retrieval | RETRIEVER | 2.504 | `703c0d03ec77bdde` |
+| `486313fed663c485c16580da677863a8` | lab-agent-run | AGENT | 2.656 | `-` |
+| `486313fed663c485c16580da677863a8` | generation | GENERATION | 0.151 | `703c0d03ec77bdde` |
+

@@ -1,0 +1,17 @@
+Challenge ID: day13-k4-l3b-monitoring-llmops-v1
+Window (UTC): 2026-09-30T09:36:25Z to 2026-09-30T09:36:50Z
+
+Representative structured log:
+- event: response_sent
+- timestamp: 2026-09-30T09:36:38.104860Z
+- correlation_id: req-d693fe48
+- feature: monitoring
+- latency_ms: 2652
+- ttft_ms: 50
+- tool_name: retrieval
+- tool_success: true
+
+The request is successful but slow, so the symptom is tail latency rather than an error-rate or retrieval-failure incident.
+
+Raw structured-log record (all previews are redacted before file output):
+{"correlation_id":"req-d693fe48","cost_usd":0.002283,"env":"dev","event":"response_sent","feature":"monitoring","latency_ms":2652,"level":"info","model":"claude-sonnet-4-5","payload":{"answer_preview":"Starter answer. You should improve this output logic and add better quality chec..."},"quality_score":0.8,"service":"api","session_id":"k4-l3b-challenge-s05","tokens_in":46,"tokens_out":143,"tool_name":"retrieval","tool_success":true,"ts":"2026-09-30T09:36:38.104860Z","ttft_ms":50,"user_id_hash":"68e37dc7cb5e"}

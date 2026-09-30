@@ -1,0 +1,19 @@
+Challenge ID: day13-k4-l3b-monitoring-llmops-v1
+Incident: rag_slow
+Window (UTC): 2026-09-30T09:36:25.997602Z to 2026-09-30T09:36:40.822385Z
+Affected feature: monitoring
+Latency threshold: 2000 ms
+
+Metric snapshot before incident:
+- traffic: 31
+- latency_p95: 153 ms
+- latency_p99: 1307 ms
+- ttft_p95: 50 ms
+
+Metric snapshot after official challenge workload:
+- traffic: 36
+- latency_p95: 2653 ms
+- latency_p99: 2653 ms
+- ttft_p95: 50 ms
+
+Conclusion: P95 increased by 2500 ms and exceeded the official 2000 ms threshold.
