@@ -8,7 +8,7 @@
 - **MSSV:** 03008
 - **Lớp:** K4-L3B
 - **Repository URL:** <https://github.com/dphieu/K4-L3B-Day13-DuongPhuongHieu-03008-Monitoring-LLMOps>
-- **Commit SHA cuối:** 
+- **Commit SHA cuối:** 7b18d52b2cda69743f3265f3d513ff1d5ff06dd5
 - **Challenge ID:** `day13-k4-l3b-monitoring-llmops-v1`
 - **Tên project Langfuse cá nhân:** `day13-k4-l3b-03008`
 
@@ -99,10 +99,10 @@ Baseline CP0 không có snapshot số liệu được lưu trong repository, vì
 
 ## 9. Checklist trước khi nộp
 
-- [ ] Kết quả và evidence thuộc commit SHA cuối.
+- [x] Kết quả và evidence thuộc commit SHA cuối.
 - [x] Tất cả ảnh/output mở được bằng đường dẫn tương đối.
 - [x] Incident evidence nối đúng metric → log → trace.
 - [x] Trace/prompt evidence thuộc project Langfuse cá nhân và ảnh không lộ key/secret.
 - [x] Repository chạy lại được theo README.
 - [x] Không có secret, API key, PII thô hoặc evidence của người khác/lớp khác.
-- [ ] URL repo và commit SHA cuối đã được nộp trên LMS/Codelabs.
+- [x] URL repo và commit SHA cuối đã được nộp trên LMS/Codelabs.
